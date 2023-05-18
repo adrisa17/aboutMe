@@ -1,0 +1,40 @@
+@import "./base";
+$color-primary: #ffff;
+$color-secundary: #aaaa;
+$color-bonito: #94bbe9;
+$color-raro: #194e8a;
+$color-aburrido: #101010;
+@import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+$primary-font: "Abril Fatface", cursive;
+$secundary-font: "Poppins", sans-serif;
+
+body {
+  background-color: $color-bonito;
+  color: $color-aburrido;
+  font-family: $primary-font;
+  font-size: 1 rem;
+}
+
+a,
+a:visited,
+a:hover,
+a:focus,
+a:active {
+  text-decoration: none;
+  color: $color-aburrido;
+}
+
+.menu-bar {
+  background-color: $color-secundary;
+  display: flex;
+  justify-content: space-between;
+
+  &__items {
+    display: inherit;
+    justify-content: inherit;
+  }
+  &--selected {
+    background-color: #f20909;
+  }
+}
