@@ -1,0 +1,33 @@
+@import "./variables.scss";
+body {
+  background-color: $secundary-color;
+  color: $color-letter;
+  font-family: $primary-font;
+  font-size: 1 rem;
+  margin: 1%;
+}
+
+a,
+a:visited,
+a:hover,
+a:focus,
+a:active {
+  text-decoration: none;
+  color: azure;
+  padding: 15px;
+}
+header {
+  position: sticky;
+  top: 0;
+}
+
+.menu-bar {
+  background-color: $color-waves;
+  display: flex;
+  justify-content: space-between;
+
+  &__items {
+    display: inherit;
+    justify-content: inherit;
+  }
+}

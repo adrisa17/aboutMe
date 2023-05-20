@@ -1,0 +1,28 @@
+@import "./variables.scss";
+
+.main-footer {
+  background: #683b8c;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-content: space-around;
+  flex-wrap: wrap;
+  align-items: center;
+  color: azure;
+  font-family: $secundary-font;
+  &__social-cont {
+    margin-top: 2rem;
+  }
+  &__icon {
+    width: 2rem;
+  }
+  &__social-cont {
+    display: flex;
+  }
+  &__title-social {
+    font-size: 12px;
+  }
+  &__lower {
+    font-size: 10px;
+  }
+}

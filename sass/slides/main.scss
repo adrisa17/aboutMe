@@ -1,0 +1,121 @@
+@import "./variables.scss";
+
+.title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+  font-size: 2rem;
+  justify-content: space-evenly;
+
+  &__paragraph {
+    font-family: $secundary-font;
+    font-size: 20px;
+    text-align: center;
+  }
+
+  &__contact-button {
+    background-color: $color-waves;
+    border-radius: 30px;
+    padding: 1px;
+  }
+  &__contact-button:hover {
+    background-color: $hover-color;
+    color: azure;
+  }
+}
+
+h3 {
+  text-align: center;
+}
+p {
+  text-align: center;
+  font-family: "Poppins";
+}
+
+.about-me {
+  &__main-container {
+    text-align: center;
+    font-family: $secundary-font;
+  }
+  &__content {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+  }
+  &__content--main {
+    width: 50%;
+    margin: 1.5rem;
+  }
+  &__main-container--image {
+    max-width: 1%;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  &__title {
+    font-family: $primary-font;
+    text-align: center;
+  }
+  &__content--paragraph {
+    font-family: $secundary-font;
+  }
+  &__content--little-skills {
+    font-family: $secundary-font;
+    background-color: $color-waves;
+    color: azure;
+    margin-bottom: 1.5rem;
+    margin-right: 1.5rem;
+    font-size: 1rem;
+    background: rgba(153, 153, 153, 0.2);
+    border-radius: 5px;
+    color: #666;
+  }
+  &__image {
+    width: 10%;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+form {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+textarea {
+  height: 120px;
+}
+
+input[type="submit"] {
+  background-color: $color-waves;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: $primary-color;
+  color: $color-letter;
+}

@@ -1,33 +1,129 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>The wonderfull world of ANAIRDA profile</title>
-    <link rel="stylesheet" href="./styles/style.css" />
-    <!-- para colocar un icóno en la pestaña -->
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
-  </head>
-  <body>
-    <header>
-      <nav class="menu-bar">
-        <ul class="menu-bar__items">
-          <li class="menu-bar--selected">
-            <a href="./index.html">Home</a>
-          </li>
-          <li>
-            <a href="./about-me.html">about me</a>
-          </li>
-          <li>
-            <a href="./projects.html">Projects</a>
-          </li>
-        </ul>
-        <div>
-          <a href="./contact.html">contact</a>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The wonderfull world of ANAIRDA profile</title>
+  <link rel="stylesheet" href="./styles/style.css" />
+  <!-- para colocar un icóno en la pestaña -->
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+</head>
+
+<body>
+  <header>
+    <nav class="menu-bar">
+      <ul class="menu-bar__items">
+        <li class="menu-bar--selected">
+          <a href="./index.html">Home</a>
+        </li>
+        <li>
+          <a href="./index.html#about-moi">about me</a>
+        </li>
+        <li>
+          <a href="./projects.html">Projects</a>
+        </li>
+      </ul>
+      <div>
+        <a href="./contact.html">Contact</a>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <section class="title">
+      <h1>Hey, I'm Adriana Isabel Díaz</h1>
+      <div class="title__paragraph">
+        <p>
+          A web developer focused on building Websites and Web applications
+        </p>
+      </div>
+      <div class="title__contact-button">
+        <a href="contact">contact</a>
+      </div>
+      <div>
+        <img src="./assets/img/Wave.png" alt="wave image" />
+      </div>
+    </section>
+    <section id="about-moi" class="about-me">
+      <div class="about-me__main-container">
+        <h2 class="about-me__title">About me</h2>
+        <img class="about-me__main-container--image" src="./assets/img/circle.png" alt="circulo de decoración">
+        <p class="about-me__main-container--subtitle"></p>
+        Welcome! Here you'll discover more about me, my interests, and the
+        things I specialize in, particularly programming and technology.
+        I'll share details about what I do and the skills I currently
+        possess. Feel free to explore and learn more about my experience in
+        these areas!
+        </p>
+      </div>
+
+      <div class="about-me__content">
+        <div class="about-me__content--main">
+          <h3 class="about-me__title">Get to know me!</h3>
+          <p class="about-me__content--paragraph">I am a web developer and psychologist with experience and
+            knowledge in JavaScript, CSS3, HTML5, Node.js, Express and MySQL.
+            I consider myself as curious, diligent and team player. Also, I enjoy
+            practicing many languages such as Portuguese, German, French &
+            English. I am currently looking to boost my career on web
+            development using agile methodologies.
+          </p>
         </div>
-      </nav>
-    </header>
-    <p>hola</p>
-  </body>
+        <div class="about-me__content--skills">
+          <h3 class="about-me__title">My Skills</h3>
+          <span class="about-me__content--little-skills">HTML</span>
+          <span class="about-me__content--little-skills">CSS</span>
+          <span class="about-me__content--little-skills">JavaScript</span>
+          <span class="about-me__content--little-skills">React</span>
+          <span class="about-me__content--little-skills">SASS</span>
+          <span class="about-me__content--little-skills">GIT</span>
+          <span class="about-me__content--little-skills">GitHub</span>
+          <span class="about-me__content--little-skills">MYSQL</span>
+        </div>
+      </div>
+      <img class="about-me__image" src="./assets/img/flecha.png" alt="Flecha imagen">
+    </section>
+    <section class="contact">
+      <div>
+        <h3 class="about-me__title">Contact</h3>
+        <img class="about-me__main-container--image" src="./assets/img/circle.png" alt="circulo de decoración">
+        <p class="about-me__main-container--subtitle">Please feel free to reach out to me by filling out the form below.
+          I'll get back to you as soon as possible.</p>
+      </div>
+      <form>
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" placeholder="Ingrese su nombre">
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="Ingrese su email">
+
+        <label for="mensaje">Mensaje:</label>
+        <textarea id="mensaje" name="mensaje" placeholder="Ingrese su mensaje"></textarea>
+
+        <input type="submit" value="Enviar">
+      </form>
+    </section>
+  </main>
+  <footer class="main-footer">
+
+    <ul class="main-footer__social-cont">
+      <li><a target="_blank" rel="noreferrer" href="#">
+          <img class="main-footer__icon" src="./assets/img/github-ico.png" alt="icon" />
+        </a></li>
+      <li><a target="_blank" rel="noreferrer" href="#">
+          <img class="main-footer__icon" src="./assets/img/linkedin-ico.png" alt="icon" />
+        </a></li>
+      <li><a target="_blank" rel="noreferrer" href="#">
+          <img class="main-footer__icon" src="./assets/img/insta-ico.png" alt="icon" />
+        </a></li>
+
+
+    </ul>
+    <div class="main-footer__lower">
+      <hr>
+      &copy; Copyright 2021. Made by Adriana
+    </div>
+  </footer>
+</body>
+
 </html>
