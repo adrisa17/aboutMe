@@ -3,70 +3,74 @@
 <head>
     <title>Formulario</title>
     <?php 
-  $server= "localhost";
-  $user="root";
-  $pass="Adri1712";
-  $database="formulario_db";
-  $linkDB=mysqli_connect($server,$user,$pass,$database);
-  if (|$linkDB) {
-    echo "no es posible conectar con el servidor";
-}
+        $server= "localhost";
+        $user="root";
+        $pass="Adri1712";
+        $database="formulario_bd";
+        $linkDB=mysqli_connect($server,$user,$pass,$database);
 
-// Verificar si se ha enviado el formulario (POST)
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // datos del formulario
-    $name = $_POST['name'];
-    $email = $_POST['email'];
-    $menssage = $_POST['menssage'];
+        if (!$linkDB) {
+            echo "no es posible conectar con el servidor";
+        }
 
-    // Insertar datos 
-    $query = "INSERT INTO formulario_db (name, email, message) VALUES ('$name', '$email', '$message')";
-    mysqli_query($conn, $query);
+        echo "Connected successfully";
 
-    // Mostrar un mensaje de éxito
-    echo "¡Formulario enviado exitosamente!";
-}
+        // Verificar si se ha enviado el formulario (POST)
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            // datos del formulario
+            $name = $_POST['name'];
+            $email = $_POST['email'];
+            $message = $_POST['message'];
+            $id= uniqid();
 
-// se envió una petición GET para eliminar un registro
-if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['id'])) {
-    $id = $_GET['id'];
+            // Insertar datos 
+            $query = "INSERT INTO datos (id,name, email, message) VALUES ('$id','$name', '$email', '$message')";
+            mysqli_query($linkDB, $query);
 
-    // Eliminar registro 
-    $query = "DELETE FROM formulario_db WHERE id = $id";
-    mysqli_query($conn, $query);
+            // Mostrar un mensaje de éxito
+            echo "¡Formulario enviado exitosamente!";
+        }
 
-    // Redireccionar index.php
-    header('Location: index.php');
-    exit;
-}
+        // se envió una petición GET para eliminar un registro
+        if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['id'])) {
+            $id = $_GET['id'];
 
-// Obtener todos los registros de la base de datos
-$query = "SELECT * FROM formulario";
-$result = mysqli_query($conn, $query);
+            // Eliminar registro 
+            $query = "DELETE FROM datos WHERE id = $id";
+            mysqli_query($linkDB, $query);
 
-  //Consultas en bases de datos
-  $sql = "SELECT * FROM datos";
-  $result = $conn->query($sql);
-  
-   //obtener datos sobre las consultas
-   
-  if ($result->num_rows > 0) {
-      while ($row = $result->fetch_assoc()) {
-          echo "Name: " . $row["name"] . "<br>";
-          echo "Email: " . $row["email"] . "<br>";
-          echo "Message: " . $row["menssge"] . "<br><br>";
-      }
-  } else {
-      echo "No se encontraron resultados.";
-  }
-  
-  
-  
-  
-  
-  // Cerrar la conexión a la base de datos
-  $conn->close();
-  ?>
+            // Redireccionar index.php
+            header('Location: index.php');
+            exit;
+        }
+
+        // Obtener todos los registros de la base de datos
+        $query = "SELECT * FROM datos";
+        $result = mysqli_query($linkDB, $query);
+
+        //Consultas en bases de datos
+        $sql = "SELECT * FROM datos";
+        $result = $linkDB->query($sql);
+        
+        //obtener datos sobre las consultas
+        
+        if ($result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+                echo "Name: " . $row["name"] . "<br>";
+                echo "Email: " . $row["email"] . "<br>";
+                echo "Message: " . $row["message"] . "<br><br>";
+            }
+        } else {
+            echo "No se encontraron resultados.";
+        }
+        
+        
+        
+        
+        
+        // Cerrar la conexión a la base de datos
+        $linkDB->close();
+    ?>
 </head>
 <body>
     <form method="POST">
@@ -77,7 +81,7 @@ $result = mysqli_query($conn, $query);
         <input type="email" id="email" name="email" placeholder="Ingresa tu email">
 
         <label for="message">Mensaje:</label>
-        <textarea id="menssage" name="menssage" placeholder="Ingresa un mensaje"></textarea>
+        <textarea id="message" name="message" placeholder="Ingresa un mensaje"></textarea>
 
         <input type="submit" value="Enviar">
     </form>
@@ -87,7 +91,7 @@ $result = mysqli_query($conn, $query);
         <?php
         // Mostrar los registros de la base de datos
         while ($row = mysqli_fetch_array($result)) {
-            echo "<li>{$row['name']} - {$row['email']} - {$row['menssage']} <a href=\"index.php?id={$row['id']}\">Eliminar</a></li>";
+            echo "<li>{$row['name']} - {$row['email']} - {$row['message']} <a href=\"index.php?id={$row['id']}\">Eliminar</a></li>";
         }
         ?>
     </ul>
